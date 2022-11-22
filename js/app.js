@@ -38,6 +38,7 @@ let app = new Vue({
         }
       }
 
+      // increases the spaces left of the lesson that was removed from the cart
       for (let i = 0; i < this.allLessons.length; i++) {
         if (this.allLessons[i].id === id) {
           this.allLessons[i].spacesLeft++;
