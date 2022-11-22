@@ -163,6 +163,24 @@ let app = new Vue({
           return this.allLessons.sort((a, b) => b.spacesLeft - a.spacesLeft);
         }
       }
+
+      // Sorts by location in alphabetic order
+      if (this.sort.sortValue === 'location') {
+        this.allLessons.sort((a, b) => {
+          if (a.location > b.location) {
+            return 1;
+          }
+          if (a.location < b.location) {
+            return -1;
+          }
+          return 0;
+        });
+        if (this.sort.sortOrder === 'ascending') {
+          return this.allLessons;
+        } else {
+          return this.allLessons.reverse();
+        }
+      }
     },
   },
 });
