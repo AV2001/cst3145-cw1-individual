@@ -102,6 +102,27 @@ let app = new Vue({
     },
 
     sortedLessons() {
+      /*
+        returns the lessons whose subject contains letters
+        typed the user in the search box
+      */
+      if (this.searchTerm.length > 0) {
+        this.searchTerm = this.searchTerm.toLowerCase().trim();
+        const displayLessons = [];
+        for (let i = 0; i < this.allLessons.length; i++) {
+          if (
+            this.allLessons[i].subject.toLowerCase().includes(this.searchTerm)
+          ) {
+            displayLessons.push(this.allLessons[i]);
+          } else if (
+            this.allLessons[i].location.toLowerCase().includes(this.searchTerm)
+          ) {
+            displayLessons.push(this.allLessons[i]);
+          }
+        }
+        return displayLessons;
+      }
+
       // returns all lessons by default when none of the sorting is applied
       if (!(this.sort.sortValue && this.sort.sortOrder)) {
         return this.allLessons;
