@@ -58,17 +58,6 @@ let app = new Vue({
       return lesson.spacesLeft !== 0;
     },
 
-    // counts the number of lessons in the cart for a particular lesson
-    cartCount(id) {
-      let count = 0;
-      for (let i = 0; i < this.cart.length; i++) {
-        if (this.cart[i] === id) {
-          count++;
-        }
-      }
-      return count;
-    },
-
     // method thats called when user clicks the submit button
     submitOrder(message, event) {
       if (event) {
