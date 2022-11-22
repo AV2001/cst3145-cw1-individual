@@ -27,6 +27,24 @@ let app = new Vue({
       lesson.spacesLeft--;
     },
 
+    // removes a chosen lesson from the cart and increases the spaces left
+    removeFromCart(id) {
+      for (let i = 0; i < this.cart.length; i++) {
+        // checks if lesson id in cart is same as the id passed as param
+        if (this.cart[i].id === id) {
+          this.cart.splice(i, 1);
+          // uses break because we want to remove only one lesson at a time
+          break;
+        }
+      }
+
+      for (let i = 0; i < this.allLessons.length; i++) {
+        if (this.allLessons[i].id === id) {
+          this.allLessons[i].spacesLeft++;
+        }
+      }
+    },
+
     /*
       terinary operatory that is used to switch
       between the lessons and the checkout page
@@ -84,8 +102,6 @@ let app = new Vue({
     },
 
     sortedLessons() {
-
-
       // returns all lessons by default when none of the sorting is applied
       if (!(this.sort.sortValue && this.sort.sortOrder)) {
         return this.allLessons;
