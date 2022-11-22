@@ -136,6 +136,24 @@ let app = new Vue({
           return this.allLessons.sort((a, b) => b.price - a.price);
         }
       }
+
+      // Sorts by subject in alphabetic order based on user's choice
+      if (this.sort.sortValue === 'subject') {
+        this.allLessons.sort((a, b) => {
+          if (a.subject > b.subject) {
+            return 1;
+          }
+          if (a.subject < b.subject) {
+            return -1;
+          }
+          return 0;
+        });
+        if (this.sort.sortOrder === 'ascending') {
+          return this.allLessons;
+        } else {
+          return this.allLessons.reverse();
+        }
+      }
     },
   },
 });
