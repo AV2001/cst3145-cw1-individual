@@ -182,5 +182,19 @@ let app = new Vue({
         }
       }
     },
+
+    // regex that must be satisifed by the user for the button to be clickable
+    checkoutFormValidation() {
+      // allows letters and space
+      const fullNameRegex = /^[A-Za-z\s]*$/;
+
+      // phone number must contain 10 digits
+      const phoneNumberRegex = /^[0-9]{10}$/;
+      return (
+        this.form.fullName.length > 3 &&
+        fullNameRegex.test(this.form.fullName) &&
+        phoneNumberRegex.test(this.form.phoneNumber)
+      );
+    },
   },
 });
