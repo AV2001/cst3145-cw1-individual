@@ -1,0 +1,86 @@
+// array that stores each lesson as an object
+const lessons = [
+  {
+    id: 1001,
+    subject: 'Introduction to Programming',
+    location: 'New York',
+    price: 800,
+    spacesLeft: 5,
+    image: './images/programming.jpg',
+  },
+  {
+    id: 1002,
+    subject: 'Mathematics',
+    location: 'New Jersey',
+    price: 500,
+    spacesLeft: 5,
+    image: './images/mathematics.jpg',
+  },
+  {
+    id: 1003,
+    subject: 'Problem Solving',
+    location: 'California',
+    price: 350,
+    spacesLeft: 5,
+    image: './images/problem-solving.jpg',
+  },
+  {
+    id: 1004,
+    subject: 'SQL Databases',
+    location: 'Texas',
+    price: 500,
+    spacesLeft: 5,
+    image: './images/sql-databases.jpg',
+  },
+  {
+    id: 1005,
+    subject: 'Web Development',
+    location: 'Florida',
+    price: 600,
+    spacesLeft: 5,
+    image: './images/web-development.jpg',
+  },
+  {
+    id: 1006,
+    subject: 'Software Project Management',
+    location: 'Georgia',
+    price: 450,
+    spacesLeft: 5,
+    image: './images/project-management.jpg',
+  },
+  {
+    id: 1007,
+    subject: 'Data Analytics',
+    location: 'Colorado',
+    price: 550,
+    spacesLeft: 5,
+    image: './images/data-analytics.jpg',
+  },
+  {
+    id: 1008,
+    subject: 'Security & Ethics',
+    location: 'Tennesse',
+    price: 575,
+    spacesLeft: 5,
+    image: './images/security-and-ethics.jpg',
+  },
+  {
+    id: 1009,
+    subject: 'Artificial Intelligence',
+    location: 'Washington',
+    price: 800,
+    spacesLeft: 5,
+    image: './images/artificial-intelligence.jpg',
+  },
+  {
+    id: 1010,
+    subject: 'Cloud Computing Essentials',
+    location: 'Kentucky',
+    price: 745,
+    spacesLeft: 5,
+    image: './images/cloud-computing.jpg',
+  },
+];
+
+// exports the lessons array to be used in another file
+export default lessons;
