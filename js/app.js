@@ -154,6 +154,15 @@ let app = new Vue({
           return this.allLessons.reverse();
         }
       }
+
+      // Sorts lessons by availability in ascending or descending order
+      if (this.sort.sortValue === 'availability') {
+        if (this.sort.sortOrder === 'ascending') {
+          return this.allLessons.sort((a, b) => a.spacesLeft - b.spacesLeft);
+        } else if (this.sort.sortOrder === 'descending') {
+          return this.allLessons.sort((a, b) => b.spacesLeft - a.spacesLeft);
+        }
+      }
     },
   },
 });
